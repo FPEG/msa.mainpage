@@ -10,10 +10,8 @@ const LoginPage: React.FC = () => {
         const res = await Axios.post(`auth/login`, { username, password })
         if (res.status === 200) {
             localStorage["token"] = res.data.value
-            if (process.env.NODE_ENV === "development") {
-                window.history.pushState({}, "", "/")
-                window.history.go(0)
-            }
+            window.history.pushState({}, "", "/")
+            window.history.go(0)
         }
     }
     return (

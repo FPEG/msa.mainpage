@@ -5,7 +5,8 @@ const IndexPage: React.FC<{}> = () => {
     return (
         <div>
             <div>我是主页</div>
-            <a href="/WordBase">asd</a>
+            <a href="/WordBase">WordBase</a>
+            <a href="/login">登陆</a>
         </div>
     )
 }
