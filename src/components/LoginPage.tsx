@@ -12,6 +12,8 @@ const LoginPage: React.FC = () => {
             localStorage["token"] = res.data.value
             window.history.pushState({}, "", "/")
             window.history.go(0)
+            console.log("test");
+            
         }
     }
     return (
