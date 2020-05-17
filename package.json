@@ -13,6 +13,7 @@
     "@types/react-router": "^5.1.7",
     "antd": "^4.2.3",
     "axios": "^0.19.2",
+    "cross-env": "^7.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
@@ -22,7 +23,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build&&deploy.cmd",
+    "cibuildtest": "cross-env NODE_ENV=test react-scripts build",
+    "cibuild": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

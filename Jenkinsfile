@@ -20,7 +20,7 @@ pipeline {
                     }
                 }
                 sh 'yarn install'
-				sh 'yarn cibuild'
+				sh 'yarn cibuildtest'
                 sh 'rm -rf /opt/nginx/www/static'
                 sh 'rm -rf /opt/nginx/www/index.html'
                 sh 'cp -r build/static /opt/nginx/www/static'
