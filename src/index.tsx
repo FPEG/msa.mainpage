@@ -33,7 +33,7 @@ ReactDOM.render(
         <Route exact path="/" component={IndexPage} />
         <Route path="/login" component={LoginPage} />
       </Switch>
-    </BrowserRouter>,
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

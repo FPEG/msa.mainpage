@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Input, Button } from 'antd';
+import { Input, Button, Card, Space } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import styles from '../assets/scss/LoginPage.module.scss'
 import Axios from 'axios';
 
 const LoginPage: React.FC = () => {
@@ -15,21 +16,24 @@ const LoginPage: React.FC = () => {
         }
     }
     return (
-        <div>
-            <Input
-                value={username}
-                placeholder="default size"
-                prefix={<UserOutlined />}
-                onChange={(e): void => { setUsername(e.target.value); }}
-            />
-            <Input.Password
-                value={password}
-                placeholder="input password"
-                onChange={(e): void => { setPassword(e.target.value); }}
-            />
-            <Button onClick={login}>登陆</Button>
-        </div>
-
+            <div className={styles.login_warpper}>
+                <Card className={styles.login} title="用户登录">
+                    <Space direction="vertical" align="start">
+                        <Input
+                            value={username}
+                            placeholder="default size"
+                            prefix={<UserOutlined />}
+                            onChange={(e): void => { setUsername(e.target.value); }}
+                        />
+                        <Input.Password
+                            value={password}
+                            placeholder="input password"
+                            onChange={(e): void => { setPassword(e.target.value); }}
+                        />
+                        <Button onClick={login}>登陆</Button>
+                    </Space>
+                </Card>
+            </div>
     )
 }
 export default LoginPage;
